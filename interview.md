@@ -50,7 +50,7 @@ for (int i = 0; i<1000; i++) {
 ```
 
 #### 迭代器原理
-Q:Set中存放着1、3~99一共50个元素，it10 = myset.find(10), it9=myset.find(9), 继续插入90~110共20个元素，此时两个it本身是否发生变化，it本身指向的元素是否发生变化？
+Q:Set中存放着1，3，5，7，9共5个元素，it5 = myset.find(5), 继续插入2～10一共五个偶数，it本身是否发生变化，it本身指向的元素是否发生变化？
 
 #### shared_ptr
 2.shared_ptr
@@ -62,5 +62,7 @@ Q:Set中存放着1、3~99一共50个元素，it10 = myset.find(10), it9=myset.fi
 ## Golang
 
 ## OS
+
 1.stack和heap有什么区别？
+
 2.内存泄露和crash都有哪些表现，如何排查和避免？
