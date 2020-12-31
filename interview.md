@@ -66,3 +66,62 @@ Q:Set中存放着1，3，5，7，9共5个元素，it5 = myset.find(5), 继续插
 1.stack和heap有什么区别？
 
 2.内存泄露和crash都有哪些表现，如何排查和避免？
+
+## C-编译-汇编
+
+*本部分只考察有编译底层基础的同学：或者精通C/CPP的同学*
+
+1.请将如下程序翻译成汇编代码
+
+
+```
+int func(int a, int b)
+{
+	return a + b;
+
+}
+int main()
+{
+	int a = 1;
+	int b = 2;
+	return func(a, b);
+}
+
+```
+
+答案与考察点（不追求语法的严格正确性）
+1.函数堆栈的建立与销毁
+2.栈变量内存空间的申请与释放
+
+
+```
+_func:                                  ## @func
+
+    pushq   %rbp
+
+    movq    %rsp, %rbp
+
+    movl    %edi, -4(%rbp)
+    movl    %esi, -8(%rbp)
+    movl    -4(%rbp), %eax
+    addl    -8(%rbp), %eax
+    popq    %rbp
+    retq
+
+_main:                                  ## @main
+
+    pushq   %rbp
+
+    movq    %rsp, %rbp
+    subq    $16, %rsp
+    movl    $0, -4(%rbp)
+    movl    $1, -8(%rbp)
+    movl    $2, -12(%rbp)
+    movl    -8(%rbp), %edi
+    movl    -12(%rbp), %esi
+    callq   _func
+    addq    $16, %rsp
+    popq    %rbp
+    retq
+    .cfi_endproc
+```
