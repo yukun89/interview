@@ -77,9 +77,17 @@ Q:Set中存放着1，3，5，7，9共5个元素，it5 = myset.find(5), 继续插
 1.stack和heap有什么区别？
 
 ```
-int main() {
+int main(){
+    vector<int> vecA;
+    print("call func\n");
+    return func();
+}
+
+int func() {
 	int a[100][1024][1024];
+	printf("Begin: print value of a:\n");
 	printf("head=%d, tail=%d\n", a[0][0][0], a[100][0][0]);
+	printf("End: print value of a.");
 }
 ```
 
