@@ -3,7 +3,7 @@
 ```cpp
 class Node {
   Node(int x){
-    data+ = x;
+    data_ = x;
   }
   public:
   int data_;
