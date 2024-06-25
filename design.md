@@ -6,7 +6,7 @@
 
 - 上线: `void online(int did, int lng, int lat)`
 - 下线：`void offline(int did)`
-- 移动: `void moveTo(int lng, int lat)`, 对于每个已经上线的司机，司机平均2s移动一次
+- 移动: `void moveTo(int did, int lng, int lat)`, 对于每个已经上线的司机，司机平均2s移动一次
 
 
 * 乘客侧
